@@ -35,4 +35,30 @@ $(document).keypress(function(e) {
 });
 
 //setup kernel function.
+//
+function bunzKernel(kernelcmd) { //kernelcmd is kernel command
+	
+	var colorRegex = /color #.{6}/ //regExp for color
+
+	if(kernelcmd = "help") {
+		 $("#consoleoutput").val($("#consoleoutput").val() + "\n\n==============================================================\nHello, I'm the TerMight, your friendly neighborhood fake terminal. Here's a list of commands you can run :\n\n-> flush\n\tClears the bash screen\n-> redubs\n-> launch\n-> f+\n\tIncrease bash font-size\n-> f-\n\tDecrease bash font-size\n-> color #HEXCODE\n\tChanges the background of the terminal.");
+        bunzKernel("scrollbottom");
+    }
+	 if (kernelcmd == "f+") { //increment font size by 3
+        $('#consoleoutput').css('font-size', (parseInt($('#consoleoutput').css('font-size')) + 3)); 
+        $('#givencommand').css('font-size', (parseInt($('#consoleoutput').css('font-size')) + 3));
+        $('body').css('font-size', (parseInt($('#consoleoutput').css('font-size')) + 3));
+       
+    }
+
+	 //decrement font size by 3
+	     if (kernelcmd == "f-") {
+        $('#consoleoutput').css('font-size', (parseInt($('#consoleoutput').css('font-size')) - 3));
+        $('#givencommand').css('font-size', (parseInt($('#consoleoutput').css('font-size')) - 3));
+        $('body').css('font-size', (parseInt($('#consoleoutput').css('font-size')) - 3));
+        
+    }
+
+
+
 
