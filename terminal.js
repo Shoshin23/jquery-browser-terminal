@@ -4,7 +4,7 @@ $(window).load(function() {
 
 $('#givencommand').css("width", 340);
 $('#consolebox').css("width", $(window).width() - 20);
-$('#consolebox').css("height", $(window).height() = 20);
+$('#consolebox').css("height", $(window).height() - 20 -$('#givencommand').height();
 $('#consoleoutput').css("width", $('#consolebox').width());
 $('#consoleoutput').css("height", $('#consolebox').height());
 
@@ -18,6 +18,7 @@ var fIn = function() {
 var fOut = function() {
 	$('#currentcommandcursor').fadeOut(500, fIn);
 };
+fIn();
 
 //Capture the current command
 //
